@@ -5,8 +5,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define DEF 0
 #define LWR 1
@@ -15,8 +15,17 @@
 #define GMS 4
 #define RGB 5
 
-
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        left_ctrl {
+            bindings = <&kp LEFT_CONTROL>;
+            key-positions = <36 37>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -31,10 +40,10 @@
 
         default_layer {
             bindings = <
-   &kp TAB   &kp Q &kp W &kp E    &kp R &kp T     &kp Y     &kp U &kp I     &kp O   &kp P    &kp BSPC
-   &kp ESC   &kp A &kp S &kp D    &kp F &kp G     &kp H     &kp J &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C    &kp V &kp B     &kp N     &kp M &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-                         &kp LGUI &mo LWR &kp RET   &kp SPACE &mo RSE &kp LALT
+  &kp TAB  &kp Q  &kp W     &kp E    &kp R    &kp T        &kp Y    &kp U      &kp I    &kp O     &kp P   &kp BSPC
+  &kp ESC  &kp A  &kp S     &kp D    &kp F    &kp G        &kp H    &kp J      &kp K    &kp L  &kp SEMI    &kp SQT
+&kp LSHFT  &kp Z  &kp X     &kp C    &kp V    &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RCTRL
+                         &kp LGUI  &mo LWR  &kp RET    &kp SPACE  &mo RSE   &kp LALT
             >;
         };
 
@@ -49,9 +58,9 @@
 
         lower_layer {
             bindings = <
-   &kp TAB    &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6    &kp F7       &kp F8       &kp F9    &kp F10  &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT  &kp DOWN     &kp UP       &kp RIGHT &kp HOME &trans
-   &kp LSHFT  &tog GMP     &tog RGB     &trans       &trans       &trans         &kp PG_DN &kp K_VOL_DN &kp K_VOL_UP &kp PG_UP &kp END  &kp RCTRL
+   &kp TAB        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5       &kp F6        &kp F7        &kp F8     &kp F9   &kp F10   &kp BSPC
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &kp LEFT      &kp DOWN        &kp UP  &kp RIGHT  &kp HOME     &trans
+ &kp LSHFT      &tog GMP      &tog RGB        &trans        &trans        &trans    &kp PG_DN  &kp K_VOL_DN  &kp K_VOL_UP  &kp PG_UP   &kp END  &kp RCTRL
             >;
         };
 
@@ -66,10 +75,10 @@
 
         raise_layer {
             bindings = <
-   &kp TAB   &kp N1    &kp N2    &kp N3     &kp N4   &kp N5     &kp N6    &kp N7   &kp N8   &kp N9    &kp N0   &kp BSPC
-   &kp LCTRL &kp CARET &kp TILDE &kp LPAR   &kp RPAR &kp HASH   &kp MINUS &kp LBKT &kp RBKT &kp EQUAL &kp BSLH &kp GRAVE
-   &kp LSHFT &kp AMPS  &kp PRCNT &kp DOLLAR &kp STAR &kp AT     &kp UNDER &kp LBRC &kp RBRC &kp PLUS  &kp PIPE &kp RCTRL
-                    	   &kp LGUI &trans   &kp RET   &kp SPACE &trans   &kp LALT
+  &kp TAB     &kp N1     &kp N2      &kp N3    &kp N4    &kp N5       &kp N6    &kp N7    &kp N8     &kp N9    &kp N0   &kp BSPC
+&kp LCTRL  &kp CARET  &kp TILDE    &kp LPAR  &kp RPAR  &kp HASH    &kp MINUS  &kp LBKT  &kp RBKT  &kp EQUAL  &kp BSLH  &kp GRAVE
+&kp LSHFT   &kp AMPS  &kp PRCNT  &kp DOLLAR  &kp STAR    &kp AT    &kp UNDER  &kp LBRC  &kp RBRC   &kp PLUS  &kp PIPE  &kp RCTRL
+                                   &kp LGUI    &trans   &kp RET    &kp SPACE    &trans  &kp LALT
             >;
         };
 
@@ -84,13 +93,13 @@
 
         gaming_layer {
             bindings = <
-   &kp TAB   &trans    &kp Q &kp W &kp E &kp R       &kp Y   &kp U &kp I     &kp O   &kp P    &kp BSPC
-   &kp ESC   &kp LSHFT &kp A &kp S &kp D &kp F       &kp H   &kp J &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LCTRL &kp LCTRL &kp Z &kp X &kp C &kp V       &kp N   &kp M &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-                             &kp LGUI &mo GMS &kp SPACE &kp RET &mo LWR &kp LALT
+  &kp TAB     &trans  &kp Q     &kp W    &kp E      &kp R      &kp Y    &kp U      &kp I    &kp O     &kp P   &kp BSPC
+  &kp ESC  &kp LSHFT  &kp A     &kp S    &kp D      &kp F      &kp H    &kp J      &kp K    &kp L  &kp SEMI    &kp SQT
+&kp LCTRL  &kp LCTRL  &kp Z     &kp X    &kp C      &kp V      &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RCTRL
+                             &kp LGUI  &mo GMS  &kp SPACE    &kp RET  &mo LWR   &kp LALT
             >;
         };
-                
+
         // GAMING SECONDARY LAYER - #4
         // ---------------------------------------   --------------------------------------
         // | TAB  |  5  |  1  |  W  |  3  |  4  |   |  6   |  7  |  8  |  9  |  0  | BKSP |
@@ -99,14 +108,14 @@
         // ---------------------------------------   --------------------------------------
         //                     | GUI |     | SPC |   | ENT |     | ALT |
         //                     -------------------   -------------------
+
         gaming_secondary {
             bindings = <
-   &kp TAB   &kp N5 &kp N1 &kp W    &kp N3 &kp N4      &kp N6    &kp N7   &kp N8   &kp N9    &kp N0          &kp BSPC
-   &kp ESC   &kp N2 &kp A  &kp S    &kp D  &kp Y       &tog 3    &kp LBKT &kp RBKT &kp UNDER &kp KP_MULTIPLY &kp GRAVE
-   &kp LCTRL &trans &kp T  &kp M    &kp G  &kp B       &kp AMPS  &kp PIPE &kp AT   &kp PRCNT &kp CARET       &kp RCTRL
-                    	   &kp LGUI &trans &kp SPACE   &kp RET   &trans   &kp LALT
+  &kp TAB  &kp N5  &kp N1     &kp W  &kp N3     &kp N4      &kp N6    &kp N7    &kp N8     &kp N9           &kp N0   &kp BSPC
+  &kp ESC  &kp N2   &kp A     &kp S   &kp D      &kp Y      &tog 3  &kp LBKT  &kp RBKT  &kp UNDER  &kp KP_MULTIPLY  &kp GRAVE
+&kp LCTRL  &trans   &kp T     &kp M   &kp G      &kp B    &kp AMPS  &kp PIPE    &kp AT  &kp PRCNT        &kp CARET  &kp RCTRL
+                           &kp LGUI  &trans  &kp SPACE     &kp RET    &trans  &kp LALT
             >;
         };
     };
 };
-
