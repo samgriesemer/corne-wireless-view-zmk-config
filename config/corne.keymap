@@ -11,8 +11,9 @@
 #define DEF 0
 #define LWR 1
 #define RSE 2
-#define GMP 3
-#define GMS 4
+#define MED 3
+#define GMP 4
+#define GMS 5
 
 / {
     combos {
@@ -81,6 +82,15 @@
             >;
         };
 
+        media_layer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans      &trans       &trans      &trans      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp C_PREV  &kp C_PAUSE  &kp C_PLAY  &kp C_NEXT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans      &trans       &trans      &trans      &trans  &trans
+                        &trans  &trans  &trans    &trans      &trans       &trans
+            >;
+        };
+
         // GAMING PRIMARY LAYER - #3
         // ---------------------------------------   ---------------------------------------
         // | TAB  |      |  Q  |  W  |  E  |  R  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
@@ -115,6 +125,15 @@
 &kp LCTRL  &trans   &kp T     &kp M   &kp G      &kp B    &kp AMPS  &kp PIPE    &kp AT  &kp PRCNT        &kp CARET  &kp RCTRL
                            &kp LGUI  &trans  &kp SPACE     &kp RET    &trans  &kp LALT
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
