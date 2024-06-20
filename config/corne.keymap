@@ -85,10 +85,10 @@
         // MEDIA CONTROL LAYER - #3
         media_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans      &trans      &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp C_RW  &kp C_PREV  &kp C_NEXT  &kp C_FF  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &kp C_STOP  &kp C_PP    &trans    &trans  &trans
-                        &trans  &trans  &trans    &trans    &trans      &trans
+&trans  &trans  &trans  &trans      &trans    &trans    &trans      &trans        &trans        &trans     &trans  &trans
+&trans  &trans  &trans  &kp C_STOP  &kp C_PP  &trans    &kp C_PREV  &kp C_RW      &kp C_FF      &kp C_NEXT &trans  &trans
+&trans  &trans  &trans  &trans      &trans    &trans    &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &trans     &trans  &trans
+                        &trans      &trans    &trans    &trans      &trans        &trans
             >;
         };
 
