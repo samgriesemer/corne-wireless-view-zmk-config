@@ -82,16 +82,17 @@
             >;
         };
 
+        // MEDIA CONTROL LAYER - #3
         media_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans      &trans       &trans      &trans      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp C_PREV  &kp C_PAUSE  &kp C_PLAY  &kp C_NEXT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans      &trans       &trans      &trans      &trans  &trans
-                        &trans  &trans  &trans    &trans      &trans       &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans      &trans      &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp C_RW  &kp C_PREV  &kp C_NEXT  &kp C_FF  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &kp C_STOP  &kp C_PP    &trans    &trans  &trans
+                        &trans  &trans  &trans    &trans    &trans      &trans
             >;
         };
 
-        // GAMING PRIMARY LAYER - #3
+        // GAMING PRIMARY LAYER - #4
         // ---------------------------------------   ---------------------------------------
         // | TAB  |      |  Q  |  W  |  E  |  R  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
         // | ESC  | SHFT |  A  |  S  |  D  |  F  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -109,10 +110,10 @@
             >;
         };
 
-        // GAMING SECONDARY LAYER - #4
+        // GAMING SECONDARY LAYER - #5
         // ---------------------------------------   --------------------------------------
         // | TAB  |  5  |  1  |  W  |  3  |  4  |   |  6   |  7  |  8  |  9  |  0  | BKSP |
-        // | ESC  |  2  |  A  |  S  |  D  |  Y  |   | TOG3 |  [  |  ]  |  _  |  *  | `    |
+        // | ESC  |  2  |  A  |  S  |  D  |  Y  |   | TOG_GMP |  [  |  ]  |  _  |  *  | `    |
         // | CTRL |     |  T  |  M  |  G  |  B  |   |  &   |  |  |  @  |  %  |  ^  | CTRL |
         // ---------------------------------------   --------------------------------------
         //                     | GUI |     | SPC |   | ENT |     | ALT |
@@ -121,7 +122,7 @@
         gaming_secondary {
             bindings = <
   &kp TAB  &kp N5  &kp N1     &kp W  &kp N3     &kp N4      &kp N6    &kp N7    &kp N8     &kp N9           &kp N0   &kp BSPC
-  &kp ESC  &kp N2   &kp A     &kp S   &kp D      &kp Y      &tog 3  &kp LBKT  &kp RBKT  &kp UNDER  &kp KP_MULTIPLY  &kp GRAVE
+  &kp ESC  &kp N2   &kp A     &kp S   &kp D      &kp Y      &tog GMP  &kp LBKT  &kp RBKT  &kp UNDER  &kp KP_MULTIPLY  &kp GRAVE
 &kp LCTRL  &trans   &kp T     &kp M   &kp G      &kp B    &kp AMPS  &kp PIPE    &kp AT  &kp PRCNT        &kp CARET  &kp RCTRL
                            &kp LGUI  &trans  &kp SPACE     &kp RET    &trans  &kp LALT
             >;
